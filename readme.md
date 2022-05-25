@@ -26,7 +26,8 @@ Tools→Datagenerator 를 선택후 뜨는 창에서 DriveFolder 네임에 구�
 
 Generate 를 누르면 생성 시작
 
-
+|값|설명|
+|--|--|
 |DriveFileName Prefix	|해당 이름이 들어간 파일만 생성|
 |ClientPath	|데이터 생성후 복사될 클라이언트 위치|
 |ServerPath	|데이터 생성후 복사될 서버 위치|
@@ -37,10 +38,9 @@ Generate 를 누르면 생성 시작
 |종류|서버 경로|클라 경로|설명|
 |---|------|-------|---|
 |CSV제목	|DataGeneratorForServer\Text	|Resources\Text	|제목.csv 로 추출됨|
-|Enum제목	|DataGeneratorForServer\ServerDataManager_CSharp	|Assets\DataScripts	|Enum제목.cs 으로 추출 됨|
+|Enum제목|DataGeneratorForServer\ServerDataManager_CSharp	|Assets\DataScripts	|Enum제목.cs 으로 추출 됨|
 |제목	|DataGeneratorForServer\ServerDataManager_CSharp 
-|DataGeneratorForServer\xmlDataForServer	| Assets\DataScripts\
-|Assets\StreamingAssets\xmlData	|제목.cs와
-|제목.xml 파일로 추출 됨|
+DataGeneratorForServer\xmlDataForServer	| Assets\DataScripts 
+Assets\StreamingAssets\xmlData	|제목.cs와 제목.xml 파일로 추출 됨|
 
 
