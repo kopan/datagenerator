@@ -39,8 +39,6 @@ Generate 를 누르면 생성 시작
 |---|------|-------|---|
 |CSV제목	|DataGeneratorForServer\Text	|Resources\Text	|제목.csv 로 추출됨|
 |Enum제목|DataGeneratorForServer\ServerDataManager_CSharp	|Assets\DataScripts	|Enum제목.cs 으로 추출 됨|
-|제목	|DataGeneratorForServer\ServerDataManager_CSharp 
-DataGeneratorForServer\xmlDataForServer	| Assets\DataScripts 
-Assets\StreamingAssets\xmlData	|제목.cs와 제목.xml 파일로 추출 됨|
+|제목	|DataGeneratorForServer\ServerDataManager_CSharp <br />DataGeneratorForServer\xmlDataForServer	| Assets\DataScripts <br />Assets\StreamingAssets\xmlData	|제목.cs와 제목.xml 파일로 추출 됨|
 
 
