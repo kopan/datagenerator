@@ -28,11 +28,14 @@ Generate 를 누르면 생성 시작
 
 |값|설명|
 |--|--|
+|DriveFolderName|원본 폴더|
 |DriveFileName Prefix	|해당 이름이 들어간 파일만 생성|
 |ClientPath	|데이터 생성후 복사될 클라이언트 위치|
 |ServerPath	|데이터 생성후 복사될 서버 위치|
 |Force ReGenerate ALL	|강제로 데이터를 모두 재생성|
 |Copy Only	|클라,서버 데이터 복사만 실행|
+|Copy Folder Name | 폴더 복사할 대상 폴더 |
+|Folder Copy | 원본->대상 폴더로 카피 실행 |
 
 
 |종류|서버 경로|클라 경로|설명|
