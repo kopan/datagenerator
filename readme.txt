@@ -1,6 +1,6 @@
-https://console.developers.google.com/ 에 접속
-
 데이터제네레이터는 기획자가 구글 스프레드시트에서 작성한 각종 데이터를 클라이언트, 서버가 편리하게 사용할 수 있도록 c# 코드와 xml 로 생성해주는 unity에서 돌아가는 도구이다.
+
+https://console.developers.google.com/ 에 접속
 
 데이터제네레이터 프로젝트를 하나 만들고 google drive api 와 google sheets api 를 추가 해준다.
 
