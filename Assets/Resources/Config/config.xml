@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Dev Configuration -->
+<Root>
+<Element platform="self" />
+<Element patch_url="" />
+<Element server_url="" />
+<Element apple_store_url="" />
+<Element android_store_url="" />
+<Element maintenance_url="" />
+<Element notice_url="" />
+<Element cs_url="" />
+<Element cafe_url="" />
+</Root>

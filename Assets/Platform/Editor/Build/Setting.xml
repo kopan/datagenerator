@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <!-- dev server -->
+  <Element productname_dev = "Patch System Dev" />
+  <Element android_bundlename_dev = "com.sangwha.patchsystem" />
+  <Element ios_bundlename_dev = "com.sangwha.patchsystem" />
+  <Element patch_url_dev = "http://172.30.1.78:10000/dev/" />
+  <Element server_url_dev = "http://172.30.1.78:10000/api/" />
+  <Element platform_dev = "sangwha"/>
+
+  <!-- alpha server -->
+  <Element productname_alpha = "Patch System Alpha" />
+  <Element android_bundlename_alpha = "com.sangwha.patchsystem" />
+  <Element ios_bundlename_alpha = "com.sangwha.patchsystem" />
+  <Element patch_url_alpha = "" />
+  <Element server_url_alpha = "http://beta.sangwha.co.kr:7000/api/" />
+  <Element platform_alpha = "sangwha"/>
+
+  <!-- beta server -->
+  <Element productname_beta = "Patch System Beta" />
+  <Element android_bundlename_beta = "com.sangwha.patchsystem" />
+  <Element ios_bundlename_beta = "com.sangwha.patchsystem" />
+  <Element patch_url_beta = "" />
+  <Element server_url_beta = "http://ec2-52-78-114-254.ap-northeast-2.compute.amazonaws.com" />
+  <Element platform_beta = "sangwha"/>
+  
+   <!-- review live server -->
+  <Element productname_review = "Patch System" />
+  <Element android_bundlename_review = "com.sangwha.patchsystem" />
+  <Element ios_bundlename_review = "com.sangwha.patchsystem" />
+  <Element patch_url_review = "" />
+  <Element server_url_review = "http://shiftwebreview-prod.us-west-1.elasticbeanstalk.com" />
+  <Element platform_review = "sangwha"/>
+  
+  <!-- live server -->
+  <Element productname_live = "Patch System" />
+  <Element android_bundlename_live = "com.sangwha.patchsystem" />
+  <Element ios_bundlename_live = "com.sangwha.patchsystem" />
+  <Element patch_url_live = "" />
+  <Element server_url_live = "http://shiftweblive-prod.us-west-1.elasticbeanstalk.com" />
+  <Element platform_live = "sangwha"/>
+
+
+  <!-- sangwha keystore -->
+  <Element sangwha_android_key_store_name = "sangwha_interactive.keystore" />
+  <Element sangwha_android_key_store_password = "sangwha0721" />
+  <Element sangwha_android_key_alias = "sangwha_interactive" />
+  <Element sangwha_android_key_password = "sangwha0721" />
+
+  
+  <!-- common setting -->
+  <Element apple_store_url = "https://itunes.apple.com/app/id1255783068?mt=8" /> 
+  <Element android_store_url = "market://details?id=" />
+  <Element maintenance_url = "http://d3gujlus6nlhl6.cloudfront.net/Web/Maintain.html" />
+  <Element notice_url = "" />
+  <Element sangwha_cs_url = "support@sangwha.co.kr" />
+  <Element sangwha_cafe_url="http://www.mobirum.com/article/list?bbsId=1814&amp;cafeId=wantedkiller&amp;sort=DATE" />
+  
+</Root>  

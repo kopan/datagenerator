@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Dev Configuration -->
+<Root>
+<Element platform="self" />
+<Element patch_url="http://172.30.1.78:10000/dev/" />
+<Element server_url="http://172.30.1.78:10000/api/" />
+<Element apple_store_url="https://itunes.apple.com/app/id1255783068?mt=8" />
+<Element android_store_url="market://details?id=com.sangwha.patchsystem" />
+<Element maintenance_url="http://d3gujlus6nlhl6.cloudfront.net/Web/Maintain.html" />
+<Element notice_url="" />
+<Element cs_url="support@nchant.co.kr" />
+<Element cafe_url="http://www.mobirum.com/article/list?bbsId=1814&amp;cafeId=wantedkiller&amp;sort=DATE" />
+</Root>

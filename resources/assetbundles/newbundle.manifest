@@ -1,0 +1,69 @@
+ManifestFileVersion: 0
+CRC: 3437025890
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0e962162d8d79489a97bcbaa79afc7ae
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 44bbc01f499c728d47d73e3f52f99277
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/_FBX/banana_grow/02_con.controller
+- Assets/_FBX/banana_grow/banana_10.FBX
+- Assets/_FBX/banana_grow/M_banana.mat
+- Assets/_FBX/banana_grow/banana_12.FBX
+- Assets/_FBX/banana_grow/T_banana_D_1024.png
+- Assets/_FBX/banana_grow/01_con.controller
+- Assets/_FBX/banana_grow/UnlitShader_CullOff.shader
+- Assets/_FBX/banana_grow/StandardShader_CullOff.shader
+- Assets/_FBX/banana_grow/Take 012.anim
+- Assets/_FBX/banana_grow/13_con.controller
+- Assets/_FBX/banana_grow/10_con.controller
+- Assets/_FBX/banana_grow/banana_02.FBX
+- Assets/_FBX/banana_grow/banana_11.FBX
+- Assets/_FBX/banana_grow/banana_01.FBX
+- Assets/_FBX/banana_grow/banana_06.FBX
+- Assets/_FBX/banana_grow/banana_01.prefab
+- Assets/_FBX/banana_grow/banana_13.FBX
+- Assets/_FBX/banana_grow/Take 001.anim
+- Assets/_FBX/banana_grow/banana_04.FBX
+- Assets/_FBX/banana_grow/Take 013.anim
+- Assets/_FBX/banana_grow/Take 002.anim
+- Assets/_FBX/banana_grow/Take 010.anim
+- Assets/_FBX/banana_grow/banana_07.FBX
+- Assets/_FBX/banana_grow/12_con.controller
+- Assets/_FBX/banana_grow/Take 011.anim
+- Assets/_FBX/banana_grow/banana_08.FBX
+- Assets/_FBX/banana_grow/11_con.controller
+- Assets/_FBX/banana_grow/banana_05.FBX
+- Assets/_FBX/banana_grow/banana_09.FBX
+- Assets/_FBX/banana_grow/banana_03.FBX
+Dependencies: []

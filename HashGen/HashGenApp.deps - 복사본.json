@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "HashGenApp/1.0.0": {
+        "dependencies": {
+          "JsonFx": "2.0.1209.2802"
+        },
+        "runtime": {
+          "HashGenApp.dll": {}
+        }
+      },
+      "JsonFx/2.0.1209.2802": {
+        "runtime": {
+          "JsonFx.dll": {
+            "assemblyVersion": "2.0.1209.2802",
+            "fileVersion": "2.0.1209.2802"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HashGenApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JsonFx/2.0.1209.2802": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

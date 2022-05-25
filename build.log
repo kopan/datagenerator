@@ -1,0 +1,512 @@
+Unity Editor version:    2020.3.28f1 (f5400f52e03f)
+Branch:                  2020.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 12.2.1 (Build 21D62)
+Darwin version:          21.3.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        32768 MB
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-jenkins" (connect: 0.00s, validation: 0.03s, handshake: 0.77s)
+Entitlement-based licensing initiated
+[LicensingClient] Error: Code 500 while updating license in client (status: Unable to update licenses. Errors: Token not found in cache,Token not found in cache)
+[Licensing::Module] Serial number assigned to: "SC-P6JD-ANZM-X5F2-CXWZ-XXXX"
+Pro License: YES
+
+LICENSE SYSTEM [2022525 11:57:59] Next license update check is after 2022-03-30T08:05:07
+
+
+LICENSE SYSTEM [2022525 11:57:59] Current license is already valid and activated. Skipping license activation process (Provided username/password will be ignored).
+[Package Manager] Server::Start -- Port 62221 was selected
+Launching external process: /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/MacOS/Unity
+-projectPath
+/Users/jenkins/.jenkins/workspace/pokopang_town_generator
+-batchmode
+-quit
+-nographics
+-logFile
+/Users/jenkins/.jenkins/workspace/pokopang_town_generator/build.log
+-executeMethod
+Builder.DataGenerator
+-folder
+CdnDataDev
+-rvn
+RVN1.2.1
+-forcegenall
+false
+Successfully changed project path to: /Users/jenkins/.jenkins/workspace/pokopang_town_generator
+/Users/jenkins/.jenkins/workspace/pokopang_town_generator
+Using Asset Import Pipeline V2.
+[Package Manager] Restoring resolved packages state from cache
+[Package Manager] Done checking package constraints in 0.00s seconds
+[Package Manager] 
+Registered 52 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ads@3.7.5 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.ads@3.7.5)
+    com.unity.analytics@3.6.12 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.analytics@3.6.12)
+    com.unity.collab-proxy@1.15.7 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.collab-proxy@1.15.7)
+    com.unity.ext.nunit@1.0.6 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.ext.nunit@1.0.6)
+    com.unity.ide.rider@2.0.7 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.ide.rider@2.0.7)
+    com.unity.ide.visualstudio@2.0.14 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.ide.visualstudio@2.0.14)
+    com.unity.ide.vscode@1.2.4 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.ide.vscode@1.2.4)
+    com.unity.multiplayer-hlapi@1.0.8 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.8)
+    com.unity.purchasing@4.1.2 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.purchasing@4.1.2)
+    com.unity.test-framework@1.1.29 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.test-framework@1.1.29)
+    com.unity.textmeshpro@3.0.6 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.textmeshpro@3.0.6)
+    com.unity.timeline@1.4.8 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.timeline@1.4.8)
+    com.unity.xr.legacyinputhelpers@2.1.8 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.8)
+    com.unity.services.core@1.0.1 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.services.core@1.0.1)
+    nuget.mono-cecil@0.1.6-preview (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/nuget.mono-cecil@0.1.6-preview)
+    com.unity.nuget.newtonsoft-json@2.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.2d.sprite@1.0.0)
+    com.unity.2d.tilemap@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.2d.tilemap@1.0.0)
+    com.unity.ugui@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.ugui@1.0.0)
+    com.unity.modules.ai@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.subsystems@1.0.0)
+    com.unity.modules.uielementsnative@1.0.0 (location: /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Library/PackageCache/com.unity.modules.uielementsnative@1.0.0)
+
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.08s seconds
+Refreshing native plugins compatible for Editor in 106.55 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.28f1 (f5400f52e03f)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/jenkins/.jenkins/workspace/pokopang_town_generator/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56454
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.28f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.28f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.054251 seconds.
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 47.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.009 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1040ms)
+		BeginReloadAssembly (160ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (753ms)
+			LoadAssemblies (162ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (182ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (398ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (175ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (48ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (99ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Validating Project structure ... 0.006762 seconds.
+Shader import version has changed; will reimport all shaders...
+Upgrading shader files ...0.004382 seconds.
+Application.AssetDatabase Initial Script Refresh Start
+Registering precompiled user dll's ...
+Registered in 0.012306 seconds.
+AssetDatabase: script compilation time: 0.035599s
+Begin MonoManager ReloadAssembly
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+DisplayProgressbar: Restoring NuGet Packages
+Unable to retrieve package list from http://www.nuget.org/api/v2/FindPackagesById()?id='Newtonsoft.Json'&$orderby=Version asc&$filter=Version eq '12.0.3'
+System.Net.WebException: The remote server returned an error: (400) Bad Request.
+  at System.Net.HttpWebRequest+<GetResponseFromData>d__240.MoveNext () [0x00152] in <0463b2ef957545c0a51b42f372cd4fbb>:0 
+--- End of stack trace from previous location where exception was thrown ---
+  at System.Net.HttpWebRequest.GetResponse () [0x00013] in <0463b2ef957545c0a51b42f372cd4fbb>:0 
+  at NugetForUnity.NugetHelper.RequestUrl (System.String url, System.String userName, System.String password, System.Nullable`1[T] timeOut) [0x000b9] in <b7bde984cef1447da61a3fd28d4789b0>:0 
+  at NugetForUnity.NugetPackageSource.GetPackagesFromUrl (System.String url, System.String username, System.String password) [0x0006c] in <b7bde984cef1447da61a3fd28d4789b0>:0 
+  at NugetForUnity.NugetPackageSource.FindPackagesById (NugetForUnity.NugetPackageIdentifier package) [0x000ee] in <b7bde984cef1447da61a3fd28d4789b0>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:LogFormat (UnityEngine.LogType,string,object[])
+UnityEngine.Debug:LogErrorFormat (string,object[])
+NugetForUnity.NugetPackageSource:FindPackagesById (NugetForUnity.NugetPackageIdentifier)
+NugetForUnity.NugetPackageSource:GetSpecificPackage (NugetForUnity.NugetPackageIdentifier)
+NugetForUnity.NugetHelper:GetOnlinePackage (NugetForUnity.NugetPackageIdentifier)
+NugetForUnity.NugetHelper:GetSpecificPackage (NugetForUnity.NugetPackageIdentifier)
+NugetForUnity.NugetHelper:InstallIdentifier (NugetForUnity.NugetPackageIdentifier,bool)
+NugetForUnity.NugetHelper:Restore ()
+NugetForUnity.NugetHelper:.cctor ()
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:134)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 134)
+
+Could not find Newtonsoft.Json 12.0.3 or greater.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:LogFormat (UnityEngine.LogType,string,object[])
+UnityEngine.Debug:LogErrorFormat (string,object[])
+NugetForUnity.NugetHelper:InstallIdentifier (NugetForUnity.NugetPackageIdentifier,bool)
+NugetForUnity.NugetHelper:Restore ()
+NugetForUnity.NugetHelper:.cctor ()
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:134)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 134)
+
+Refresh completed in 0.000002 seconds.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.082 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3083ms)
+		BeginReloadAssembly (137ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (2886ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (368ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (2229ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (2059ms)
+				ProcessInitializeOnLoadMethodAttributes (65ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+RefreshInfo: InitialScriptRefreshV2(NoUpdateAssetOptions) scanfilter:  ... 1 filters
+RefreshProfiler: Total: 4842.053ms
+	InvokeBeforeRefreshCallbacks: 0.175ms
+	ApplyChangesToAssetFolders: 0.126ms
+	Scan: 539.018ms
+	OnSourceAssetsModified: 1.240ms
+	InitializeImportedAssetsSnapshot: 0.322ms
+	GetAllGuidsForCategorization: 0.460ms
+	CategorizeAssets: 38.871ms
+	ImportAndPostprocessOutOfDateAssets: 4244.388ms (4207.566ms without children)
+		CompileScripts: 36.159ms
+		PostProcessAllAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.256ms
+		InitializingProgressBar: 0.007ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.316ms
+		RestoreLoadedAssetsState: 0.085ms
+	ReloadSourceAssets: 0.277ms
+	UnloadImportedAssets: 0.005ms
+	Hotreload: 0.658ms
+	FixTempGuids: 0.004ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.362ms
+	LoadedImportedAssetsSnapshotReleaseGCHandles: 0.010ms
+	GetLoadedSourceAssetsSnapshot: 0.218ms
+	PersistCurrentRevisions: 0.575ms
+	UnloadStreamsEnd: 8.819ms
+	GenerateScriptTypeHashes: 0.171ms
+	Untracked: 6.526ms
+Application.AssetDatabase Initial Script Refresh End
+Application.AssetDatabase.Refresh Start
+Start importing Assets/StreamingAssets/xmlData/info.xml using Guid(4b9d37beec0bfe948b6c1313f23b4e3e) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'ff1be3acc14fa18cef0904dc76955d96') in 0.341045 seconds 
+Start importing Assets/last_update_at.json using Guid(2df4823c3830a443aaffe9b0d66fc5ba) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '01b6d1c99750395b843565fb6b55531e') in 0.002196 seconds 
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Refresh completed in 0.565430 seconds.
+RefreshInfo: RefreshV2(ForceSynchronousImport) scanfilter: 
+RefreshProfiler: Total: 565.424ms
+	InvokeBeforeRefreshCallbacks: 0.166ms
+	ApplyChangesToAssetFolders: 0.054ms
+	Scan: 70.761ms
+	OnSourceAssetsModified: 0.000ms
+	InitializeImportedAssetsSnapshot: 6.552ms
+	GetAllGuidsForCategorization: 0.223ms
+	CategorizeAssets: 41.870ms
+	ImportAndPostprocessOutOfDateAssets: 441.806ms (1.400ms without children)
+		ImportManagerImport: 348.383ms (1.892ms without children)
+			ImportInProcess: 346.463ms
+			UpdateCategorizedAssets: 0.027ms
+		PostProcessAllAssets: 87.370ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.453ms
+		InitializingProgressBar: 0.002ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.252ms
+		OnDemandSchedulerStart: 0.683ms
+		RestoreLoadedAssetsState: 0.975ms
+	UpdateImportedAssetsSnapshot: 2.288ms
+	ReloadSourceAssets: 0.280ms
+	UnloadImportedAssets: 0.260ms
+	Hotreload: 1.017ms
+	FixTempGuids: 0.003ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.148ms
+	UnloadStreamsBegin: 0.018ms
+	LoadedImportedAssetsSnapshotReleaseGCHandles: 0.632ms
+	GetLoadedSourceAssetsSnapshot: 1.921ms
+	PersistCurrentRevisions: 0.218ms
+	UnloadStreamsEnd: 0.079ms
+	GenerateScriptTypeHashes: 0.786ms
+	Untracked: -0.585ms
+Application.AssetDatabase.Refresh End
+RefreshInfo: StopAssetImportingV2(ForceSynchronousImport) scanfilter: 
+RefreshProfiler: Total: 1.740ms
+Refresh completed in 0.106158 seconds.
+RefreshInfo: RefreshV2(NoUpdateAssetOptions) scanfilter: 
+RefreshProfiler: Total: 106.150ms
+Initializing Unity extensions:
+Unloading 87 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 198.4 MB.
+System memory in use after: 197.7 MB.
+
+Unloading 176 unused Assets to reduce memory usage. Loaded Objects now: 2792.
+Total: 6.925018 ms (FindLiveObjects: 0.116488 ms CreateObjectMapping: 0.071408 ms MarkObjects: 6.216611 ms  DeleteObjects: 0.519753 ms)
+
+ProgressiveSceneManager::Cancel()
+<<<<<<<<<<<<<<<<Generate Start>>>>>>>>>>>>>>>>>
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:Excute () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1932)
+Builder:Generator (string,bool) (at Assets/Editor/Builder.cs:201)
+Builder:DataGenerator () (at Assets/Editor/Builder.cs:109)
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1932)
+
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.dylib
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.so
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.bundle
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/advapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dylib
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.so
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.bundle
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/advapi32
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.dylib
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.so
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.bundle
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.dylib
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.so
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.bundle
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/advapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dylib
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.so
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.bundle
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/advapi32
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.dylib
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.so
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll.bundle
+Fallback handler could not load library /Applications/Unity/Hub/Editor/2020.3.28f1/Unity.app/Contents/Frameworks/Mono/lib/libadvapi32.dll
+Total Files : 50
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:GoogleSpreadsheetGenerate () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1379)
+DataGenerator:Excute () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1958)
+Builder:Generator (string,bool) (at Assets/Editor/Builder.cs:201)
+Builder:DataGenerator () (at Assets/Editor/Builder.cs:109)
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1379)
+
+25 get sheet : CSVTextCommon
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:ThreadRun (Google.Apis.Drive.v3.Data.File,Google.Apis.Sheets.v4.SheetsService,Google.Apis.Drive.v3.Data.FileList,string[],string[],System.Collections.Concurrent.ConcurrentDictionary`2<string, string>,System.Collections.Concurrent.ConcurrentDictionary`2<string, string>,int&,int,int&) (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1598)
+DataGenerator/<>c__DisplayClass25_3:<GoogleSpreadsheetGenerate>b__2 () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1404)
+System.Threading.Tasks.Task`1<DataGenerator/ThreadRunStatus>:InnerInvoke ()
+System.Threading.Tasks.Task:Execute ()
+System.Threading.Tasks.Task:ExecutionContextCallback (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.Tasks.Task:ExecuteWithThreadLocal (System.Threading.Tasks.Task&)
+System.Threading.Tasks.Task:ExecuteEntry (bool)
+System.Threading.Tasks.Task:System.Threading.IThreadPoolWorkItem.ExecuteWorkItem ()
+System.Threading.ThreadPoolWorkQueue:Dispatch ()
+System.Threading._ThreadPoolWaitCallback:PerformWaitCallback ()
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1598)
+
+CSVTextCommon Total Line : 5201
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:ThreadRun (Google.Apis.Drive.v3.Data.File,Google.Apis.Sheets.v4.SheetsService,Google.Apis.Drive.v3.Data.FileList,string[],string[],System.Collections.Concurrent.ConcurrentDictionary`2<string, string>,System.Collections.Concurrent.ConcurrentDictionary`2<string, string>,int&,int,int&) (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1751)
+DataGenerator/<>c__DisplayClass25_3:<GoogleSpreadsheetGenerate>b__2 () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1404)
+System.Threading.Tasks.Task`1<DataGenerator/ThreadRunStatus>:InnerInvoke ()
+System.Threading.Tasks.Task:Execute ()
+System.Threading.Tasks.Task:ExecutionContextCallback (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.Tasks.Task:ExecuteWithThreadLocal (System.Threading.Tasks.Task&)
+System.Threading.Tasks.Task:ExecuteEntry (bool)
+System.Threading.Tasks.Task:System.Threading.IThreadPoolWorkItem.ExecuteWorkItem ()
+System.Threading.ThreadPoolWorkQueue:Dispatch ()
+System.Threading._ThreadPoolWaitCallback:PerformWaitCallback ()
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1751)
+
+[rex][DataGenerator] SaveXmlInfo(Dedrick(이재승))
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:GoogleSpreadsheetGenerate () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1447)
+DataGenerator:Excute () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1958)
+Builder:Generator (string,bool) (at Assets/Editor/Builder.cs:201)
+Builder:DataGenerator () (at Assets/Editor/Builder.cs:109)
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1447)
+
+CSVTextCommon Generate / Diff Sec : 6225
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:Excute () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1963)
+Builder:Generator (string,bool) (at Assets/Editor/Builder.cs:201)
+Builder:DataGenerator () (at Assets/Editor/Builder.cs:109)
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1963)
+
+<<<<<<<<<<<<<<<<Generate Time : 8945>>>>>>>>>>>>>>>>>
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DataGenerator:Excute () (at Assets/Platform/Editor/DataGenerator/DataGenerator.cs:1986)
+Builder:Generator (string,bool) (at Assets/Editor/Builder.cs:201)
+Builder:DataGenerator () (at Assets/Editor/Builder.cs:109)
+
+(Filename: Assets/Platform/Editor/DataGenerator/DataGenerator.cs Line: 1986)
+
+Batchmode quit successfully invoked - shutting down!
+[Performance] Application.InitializeProject                               :        1 samples, Peak.  8.32 s (1.0x), Avg.  8.32 s, Total. 8.324 s (45.6%)
+[Performance] Application.PackageManager.StartServer                      :        1 samples, Peak.  2.74 ms (1.0x), Avg.  2.74 ms, Total. 2.741 ms (0.0%)
+[Performance] Application.AcquireProjectLock                              :        1 samples, Peak.  10.7 ms (1.0x), Avg.  10.7 ms, Total. 10.67 ms (0.1%)
+[Performance] Application.InitializeEngineNoGraphics                      :        1 samples, Peak.   221 ms (1.0x), Avg.   221 ms, Total. 220.6 ms (1.2%)
+[Performance] Application.PackageManager.Initialize                       :        1 samples, Peak.   572 ms (1.0x), Avg.   572 ms, Total. 572.1 ms (3.1%)
+[Performance] CurlRequestCheck                                            :        6 samples, Peak.   101 us (3.0x), Avg.  33.7 us, Total. 202.4 us (0.0%)
+[Performance] VersionControl.Task.Wait                                    :        1 samples, Peak.  12.6 us (1.0x), Avg.  12.6 us, Total. 12.64 us (0.0%)
+[Performance] Application.EngineGraphics.Initialize                       :        1 samples, Peak.  23.8 ms (1.0x), Avg.  23.8 ms, Total. 23.76 ms (0.1%)
+[Performance] Application.GI.Initialize                                   :        1 samples, Peak.   268 us (1.0x), Avg.   268 us, Total. 267.9 us (0.0%)
+[Performance] Application.LoadAllDefaultResourcesFromEditor               :        1 samples, Peak.  1.54 ms (1.0x), Avg.  1.54 ms, Total. 1.539 ms (0.0%)
+[Performance] Application.LoadMonoAssemblies                              :        1 samples, Peak.  1.05 s (1.0x), Avg.  1.05 s, Total. 1.049 s (5.8%)
+[Performance] RestoreManagedReferences                                    :        2 samples, Peak.  92.4 ms (2.0x), Avg.  46.2 ms, Total. 92.42 ms (0.5%)
+[Performance] ProcessService.EditorAfterLoadAllAssemblies                 :        2 samples, Peak.   381 us (1.1x), Avg.   338 us, Total. 675.5 us (0.0%)
+[Performance] Application.ReadLicenseInfo                                 :        1 samples, Peak.  11.1 ms (1.0x), Avg.  11.1 ms, Total. 11.10 ms (0.1%)
+[Performance] Application.InitialScriptRefresh                            :        1 samples, Peak.  4.84 s (1.0x), Avg.  4.84 s, Total. 4.844 s (26.5%)
+[Performance] Compiling Scripts                                           :        1 samples, Peak.  36.1 ms (1.0x), Avg.  36.1 ms, Total. 36.12 ms (0.2%)
+[Performance] AssetDatabase.Refresh                                       :        2 samples, Peak.   565 ms (2.0x), Avg.   283 ms, Total. 565.5 ms (3.1%)
+[Performance] Application.AssetDatabase.Refresh                           :        1 samples, Peak.   566 ms (1.0x), Avg.   566 ms, Total. 565.5 ms (3.1%)
+[Performance] PresetManagerPostProcessor.OnPreprocessAsset                :        2 samples, Peak.   341 us (1.9x), Avg.   178 us, Total. 355.6 us (0.0%)
+[Performance] CancelSplashScreenOnAssetChange.OnPreprocessAsset           :        2 samples, Peak.   157 us (2.0x), Avg.  80.3 us, Total. 160.7 us (0.0%)
+[Performance] AssetDatabase.ImportAssets                                  :        1 samples, Peak.   284 ns (1.0x), Avg.   284 ns, Total. 284.0 ns (0.0%)
+[Performance] AssemblyPostProcessor.OnPostprocessAllAssets                :        1 samples, Peak.   378 us (1.0x), Avg.   378 us, Total. 378.3 us (0.0%)
+[Performance] AssetPostprocessor.OnPostprocessAllAssets                   :        1 samples, Peak.   255 us (1.0x), Avg.   255 us, Total. 254.8 us (0.0%)
+[Performance] SpriteEditorTexturePostprocessor.OnPostprocessAllAssets     :        1 samples, Peak.   305 us (1.0x), Avg.   305 us, Total. 304.6 us (0.0%)
+[Performance] TMPro_TexturePostProcessor.OnPostprocessAllAssets           :        1 samples, Peak.   463 us (1.0x), Avg.   463 us, Total. 463.1 us (0.0%)
+[Performance] AssetProcessor.OnPostprocessAllAssets                       :        3 samples, Peak.  1.54 ms (1.8x), Avg.   849 us, Total. 2.547 ms (0.0%)
+[Performance] RetainedMode.OnPostprocessAllAssets                         :        1 samples, Peak.   883 us (1.0x), Avg.   883 us, Total. 883.4 us (0.0%)
+[Performance] EditorAtlasMonitorInjector.OnPostprocessAllAssets           :        1 samples, Peak.   176 us (1.0x), Avg.   176 us, Total. 175.6 us (0.0%)
+[Performance] AudioMixerPostprocessor.OnPostprocessAllAssets              :        1 samples, Peak.   456 us (1.0x), Avg.   456 us, Total. 455.7 us (0.0%)
+[Performance] AssetEvents.OnPostprocessAllAssets                          :        2 samples, Peak.   255 us (1.3x), Avg.   192 us, Total. 384.4 us (0.0%)
+[Performance] ModelImporterPostProcessor.OnPostprocessAllAssets           :        1 samples, Peak.  1.10 ms (1.0x), Avg.  1.10 ms, Total. 1.104 ms (0.0%)
+[Performance] StyleCatalogPostProcessor.OnPostprocessAllAssets            :        1 samples, Peak.  72.8 ms (1.0x), Avg.  72.8 ms, Total. 72.85 ms (0.4%)
+[Performance] BuildCatalog                                                :        1 samples, Peak.  71.7 ms (1.0x), Avg.  71.7 ms, Total. 71.71 ms (0.4%)
+[Performance] Application.ImportAssetsWithMismatchingAssetImporterVersion :        1 samples, Peak.   125 ms (1.0x), Avg.   125 ms, Total. 125.1 ms (0.7%)
+[Performance] Application.SyncCurrentColorSpace                           :        1 samples, Peak.  6.00 ms (1.0x), Avg.  6.00 ms, Total. 6.003 ms (0.0%)
+[Performance] Application.OnUsbDevicesChanged                             :        1 samples, Peak.   346 us (1.0x), Avg.   346 us, Total. 345.6 us (0.0%)
+[Performance] Application.AssetInstanceCacheUpdate                        :        1 samples, Peak.   205 ns (1.0x), Avg.   205 ns, Total. 205.0 ns (0.0%)
+[Performance] Application.UnityExtensions.Initialize                      :        1 samples, Peak.   894 us (1.0x), Avg.   894 us, Total. 893.9 us (0.0%)
+[Performance] Application.InitializeManagedCompilationPipeline            :        1 samples, Peak.  61.1 ms (1.0x), Avg.  61.1 ms, Total. 61.11 ms (0.3%)
+[Performance] Application.ExecuteStartups                                 :        1 samples, Peak.  50.1 ms (1.0x), Avg.  50.1 ms, Total. 50.08 ms (0.3%)
+[Performance] Gizmo.RebuildRenderers                                      :        1 samples, Peak.  48.1 ms (1.0x), Avg.  48.1 ms, Total. 48.11 ms (0.3%)
+[Performance] Gizmo.AddGizmoRenderers                                     :       84 samples, Peak.  1.35 ms (42.4x), Avg.  31.9 us, Total. 2.678 ms (0.0%)
+[Performance] Application.InitializeMenu                                  :        1 samples, Peak.  60.0 ms (1.0x), Avg.  60.0 ms, Total. 60.05 ms (0.3%)
+[Performance] UpdateAllMenus                                              :        1 samples, Peak.  60.0 ms (1.0x), Avg.  60.0 ms, Total. 60.04 ms (0.3%)
+[Performance] Application.editorInitializingProject                       :        1 samples, Peak.  21.1 us (1.0x), Avg.  21.1 us, Total. 21.06 us (0.0%)
+[Performance] GUIView.RepaintAll.PlayerLoopController                     :        1 samples, Peak.  3.45 us (1.0x), Avg.  3.45 us, Total. 3.448 us (0.0%)
+[Performance] Application.InvokeFinishedLoadingProject                    :        1 samples, Peak.  5.18 ms (1.0x), Avg.  5.18 ms, Total. 5.184 ms (0.0%)
+[Performance] ProcessService.OnProjectLoaded                              :        1 samples, Peak.  83.9 us (1.0x), Avg.  83.9 us, Total. 83.92 us (0.0%)
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+debugger-agent: Unable to listen on 46
+[usbmuxd] Stop listen thread
+[usbmuxd] Error: 
+[usbmuxd] Listen thread exiting
+Exiting batchmode successfully now!
+[Package Manager] Server::Kill -- Server was shutdown

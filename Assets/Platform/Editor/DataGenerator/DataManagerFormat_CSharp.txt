@@ -1,0 +1,428 @@
+using System;
+using System.Data;
+using System.Linq;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml;
+#CLIENT_CODE_START#
+using System.Security.Cryptography;
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
+#CLIENT_CODE_END#
+
+//namespace DataGen
+//{
+
+	#ENUMS#
+
+	public partial class #STRUCT_NAME#
+	{
+		#INFO_MEMBER#	
+	};
+
+	#SERVER_CODE_START#
+	public sealed class #CLASS_NAME#
+	#SERVER_CODE_END#
+	#CLIENT_CODE_START#
+	public partial class #CLASS_NAME#
+	#CLIENT_CODE_END#
+	{
+		static readonly #CLASS_NAME# instance =  new #CLASS_NAME#();
+		private Dictionary<#KEY_TYPE#, #STRUCT_NAME#> m_Table = new Dictionary<#KEY_TYPE#, #STRUCT_NAME#>();
+		private string m_xmlPath = "";
+		 
+		private Dictionary<#KEY_TYPE#, #STRUCT_NAME#> m_Table_Btest = new Dictionary<#KEY_TYPE#, #STRUCT_NAME#>();
+		private string m_xmlPath_Btest = "";
+	#SERVER_CODE_START#
+		#CLASS_NAME#(bool isDataLoad = true) 
+	#SERVER_CODE_END#
+	
+	#CLIENT_CODE_START#
+		public #CLASS_NAME#(bool isDataLoad = true) 
+	#CLIENT_CODE_END#
+		{
+			#CLIENT_CODE_START#
+			if(isDataLoad) 
+			{
+				//if(DataManagerNavigator.Instance.g_bIsLoadAssetBundle) 
+					Load();
+				//else 
+				//	LoadAsset();
+			}
+			#CLIENT_CODE_END#
+		}
+    
+		public static #CLASS_NAME# Instance
+		{
+			get
+			{
+				return instance;
+			}
+		}
+
+		public int GetInfoSize() { return m_Table.Count; }
+
+		public string GetXMLPath() { return m_xmlPath; }
+
+		public #STRUCT_NAME# GetInfo( #KEY_TYPE# Id, bool is_Btest = false )
+		{
+			
+			if (is_Btest)
+            {
+                if (m_Table_Btest.ContainsKey(Id))
+                {
+                    return m_Table_Btest[Id];
+                }
+            }
+			
+
+			if (m_Table.ContainsKey(Id))
+			{
+				return m_Table[Id];
+			}
+
+			return null;
+		}
+
+		public #STRUCT_NAME# GetInfoByIndex( int Index, bool is_Btest = false )
+		{
+			
+			if (is_Btest)
+            {
+                if (m_Table_Btest.Count > Index)
+                {
+                    return m_Table_Btest.ElementAt(Index).Value;
+                }
+            }
+			
+
+			if (m_Table.Count > Index)
+			{
+				return m_Table.ElementAt(Index).Value;
+			}
+
+			return null;	
+		}
+
+		public Dictionary<#KEY_TYPE#, #STRUCT_NAME#> GetInfos( bool is_Btest = false)
+		{
+			
+			if (is_Btest)
+            {
+				if(m_Table_Btest.Count > 0)
+                    return m_Table_Btest;
+            }
+			
+
+			return m_Table;
+		}
+
+		#CLIENT_CODE_START#
+		public void LoadAsset()
+		{
+			DataSet ds = new DataSet();
+        
+			UnityEngine.TextAsset textAsset = (UnityEngine.TextAsset)UnityEngine.Resources.Load("xmlData/#XML_NAME#", typeof(UnityEngine.TextAsset));       
+			System.IO.StringReader xmlSR = new System.IO.StringReader(textAsset.text);
+        
+			ds.EnforceConstraints = false;
+			ds.ReadXml(xmlSR, XmlReadMode.Auto);
+			ds.EnforceConstraints = true;
+        
+			if (0 == ds.Tables.Count) return;
+
+			Load(ds.Tables[0]);
+		}
+		#CLIENT_CODE_END#
+
+		public void Load()
+		{
+			DataSet ds = new DataSet();
+		
+			#CLIENT_CODE_START#
+			string filename = "#XML_ENC_PATH#";
+			m_xmlPath = DataManagerNavigator.Instance.g_szRootPath + filename;
+
+			if (System.IO.File.Exists(m_xmlPath) == false)
+            {
+                m_xmlPath =  Global.StreamingAssetsPathForFile + filename;
+            }
+            if (System.IO.File.Exists (m_xmlPath))
+			{
+				System.IO.FileStream fsReadXml = new System.IO.FileStream(m_xmlPath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+				byte[] Key = new byte[32];
+				byte[] IV = new byte[16];
+				byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(m_xmlPath).ToCharArray());
+				Array.Clear(Key, 0, 32);
+				Array.Copy(FileKey, Key, (FileKey.Length > 32) ? 32 : FileKey.Length);
+				Array.Copy(Key, IV, 16);
+
+				RijndaelManaged aes = new RijndaelManaged();
+				ICryptoTransform decryptoTransform = aes.CreateDecryptor(Key, IV);
+				CryptoStream cryptoStream = new CryptoStream(fsReadXml, decryptoTransform, CryptoStreamMode.Read);
+
+				ds.EnforceConstraints = false;
+				ds.ReadXml(cryptoStream);
+				ds.EnforceConstraints = true;
+
+				fsReadXml.Close();
+			}
+			else
+			{
+#if !UNITY_EDITOR
+				ManagerData._instance.StartCoroutine(Load(m_xmlPath));
+#endif
+			}
+
+			//[2022.03.24][rex] for client _Btest
+			DataSet ds_Btest = null;
+			
+			if(filename.Contains("_Btest"))
+			{
+				//[2022.03.25][rex] If it is already _Btest, just load itself.
+			}
+			else
+			{
+				string filename_Btest = "#XML_ENC_PATH#";
+				filename_Btest = filename_Btest.Replace(".", "_Btest.");
+				m_xmlPath_Btest = DataManagerNavigator.Instance.g_szRootPath + filename_Btest;
+
+				if (System.IO.File.Exists(m_xmlPath_Btest) == false)
+				{
+					m_xmlPath_Btest =  Global.StreamingAssetsPathForFile + filename_Btest;
+				}
+				if (System.IO.File.Exists (m_xmlPath_Btest))
+				{
+					ds_Btest = new DataSet();
+
+					System.IO.FileStream fsReadXml = new System.IO.FileStream(m_xmlPath_Btest, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+					byte[] Key = new byte[32];
+					byte[] IV = new byte[16];
+					byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(m_xmlPath_Btest).ToCharArray());
+					Array.Clear(Key, 0, 32);
+					Array.Copy(FileKey, Key, (FileKey.Length > 32) ? 32 : FileKey.Length);
+					Array.Copy(Key, IV, 16);
+
+					RijndaelManaged aes = new RijndaelManaged();
+					ICryptoTransform decryptoTransform = aes.CreateDecryptor(Key, IV);
+					CryptoStream cryptoStream = new CryptoStream(fsReadXml, decryptoTransform, CryptoStreamMode.Read);
+
+					ds_Btest.EnforceConstraints = false;
+					ds_Btest.ReadXml(cryptoStream);
+					ds_Btest.EnforceConstraints = true;
+
+					fsReadXml.Close();
+				}
+				else
+				{
+#if !UNITY_EDITOR
+					ManagerData._instance.StartCoroutine(Load(m_xmlPath_Btest, true));
+#endif
+				}
+			}
+			#CLIENT_CODE_END#
+			#SERVER_CODE_START#
+			m_xmlPath = System.IO.Path.Combine(DataManagerNavigator.ContentRootPath, "#XML_PATH#");
+			ds.EnforceConstraints = false;
+			ds.ReadXml(m_xmlPath);
+			ds.EnforceConstraints = true;
+			#SERVER_CODE_END#
+
+			if(0 == ds.Tables.Count) return;
+
+			#SERVER_CODE_START#
+			m_xmlPath_Btest = System.IO.Path.Combine(DataManagerNavigator.ContentRootPath, "#XML_PATH#");
+			m_xmlPath_Btest = m_xmlPath_Btest.Replace(".", "_Btest.");
+            if (File.Exists(m_xmlPath_Btest))
+            {
+				DataSet ds_Btest = new DataSet();
+                ds_Btest.EnforceConstraints = false;
+                ds_Btest.ReadXml(m_xmlPath_Btest);
+                ds_Btest.EnforceConstraints = true;
+                Load(ds.Tables[0], ds_Btest.Tables[0]);
+            }
+            else
+            {
+                Load(ds.Tables[0]);
+            }
+			#SERVER_CODE_END#
+			#CLIENT_CODE_START#
+			if(null == ds_Btest)
+			{
+				Load(ds.Tables[0]);
+			}
+			else
+			{
+				Load(ds.Tables[0], ds_Btest.Tables[0]);
+			}
+			#CLIENT_CODE_END#
+
+		}
+#CLIENT_CODE_START#	
+		public IEnumerator Load(string filePath, bool is_Btest = false)
+		{
+			DataSet ds = new DataSet();
+
+			UnityWebRequest www = UnityWebRequest.Get(filePath);
+			//yield return www.SendWebRequest();
+
+			UnityWebRequestAsyncOperation uwrao = www.SendWebRequest();
+			while (null != uwrao &&
+				false == uwrao.isDone)
+			{
+				if (null != uwrao.webRequest)
+				{
+					if (UnityWebRequest.Result.ConnectionError == uwrao.webRequest.result ||
+						UnityWebRequest.Result.ProtocolError == uwrao.webRequest.result ||
+						UnityWebRequest.Result.DataProcessingError == uwrao.webRequest.result)
+					{
+						break; //safely
+					}
+				}
+			}
+			
+			if (!string.IsNullOrEmpty(www.error))
+			{
+				//Debug.LogWarning("Load : " + filePath + www.error);
+				Debug.LogError("Load : " + filePath + www.error);
+				www.Dispose();
+			}
+			else
+			{
+				byte[] Key = new byte[32];
+				byte[] IV = new byte[16];
+				byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(filePath).ToCharArray());
+				Array.Clear(Key, 0, 32);
+				Array.Copy(FileKey, Key, (FileKey.Length > 32) ? 32 : FileKey.Length);
+				Array.Copy(Key, IV, 16);
+
+				RijndaelManaged aes = new RijndaelManaged();
+				ICryptoTransform decryptoTransform = aes.CreateDecryptor(Key, IV);
+				using (var encryptedStream = new System.IO.MemoryStream(www.downloadHandler.data))
+			    {
+				    using (var cryptoStream = new CryptoStream(encryptedStream, decryptoTransform, CryptoStreamMode.Read))
+				    {
+					    using (var reader = new System.IO.StreamReader(cryptoStream))
+					    {
+						    XmlDocument xml = new XmlDocument();
+						    xml.LoadXml(reader.ReadToEnd());
+                            Load(xml, is_Btest);
+					    }
+				    }
+			    }
+			}
+
+			www.Dispose();
+			www = null;
+
+			yield return null;
+		}
+#CLIENT_CODE_END#
+
+		public void Load(System.IO.Stream s)
+		{
+			DataSet ds = new DataSet();
+
+			ds.EnforceConstraints = false;
+			ds.ReadXml(s);
+			ds.EnforceConstraints = true;
+		
+			Load(ds.Tables[0]);
+		}
+
+		public void Load(System.IO.TextReader tr)
+		{
+			DataSet ds = new DataSet();
+
+			ds.EnforceConstraints = false;
+			ds.ReadXml(tr);
+			ds.EnforceConstraints = true;
+
+			Load(ds.Tables[0]);
+		}
+
+		public void Load(System.Xml.XmlReader rd)
+		{
+			DataSet ds = new DataSet();
+
+			ds.EnforceConstraints = false;
+			ds.ReadXml(rd);
+			ds.EnforceConstraints = true;
+
+			Load(ds.Tables[0]);
+		} 
+	
+		public void Load(DataTable dt, DataTable dt_Btest = null)
+		{
+			m_Table.Clear();
+			foreach (DataRow row in dt.Rows)
+			{
+				#CLIENT_CODE_START#
+				#STRUCT_NAME# info = new #STRUCT_NAME#();
+			
+				#GET_INFO_MAPPING_BY_REFLECTION# 
+
+				m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+				#CLIENT_CODE_END#
+				#SERVER_CODE_START#
+				#STRUCT_NAME# info = new #STRUCT_NAME#
+				{
+					#GET_INFO_MAPPING# 
+				};
+
+				m_Table.Add(#KEY_TYPE_CONVERT#, info);
+				#SERVER_CODE_END#
+			}
+
+			
+			if(dt_Btest != null)
+			{
+				m_Table_Btest.Clear();
+				foreach (DataRow row in dt_Btest.Rows)
+				{
+					#CLIENT_CODE_START#
+					#STRUCT_NAME# info = new #STRUCT_NAME#();
+			
+					#GET_INFO_MAPPING_BY_REFLECTION# 
+
+					m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+					#CLIENT_CODE_END#
+					#SERVER_CODE_START#
+					#STRUCT_NAME# info = new #STRUCT_NAME#
+					{
+						#GET_INFO_MAPPING#
+					};
+
+					m_Table_Btest.Add(#KEY_TYPE_CONVERT#, info);
+					#SERVER_CODE_END#
+				}
+			}
+		}
+
+        	public void Load(XmlDocument xml, bool is_Btest = false)
+	    	{
+		    	XmlNode rootNode = xml.ChildNodes[1];
+		    	for (int i = 0; i < rootNode.ChildNodes.Count; ++i)
+		    	{
+			    	XmlNode node = rootNode.ChildNodes[i];
+			
+			    	#CLIENT_CODE_START#
+				    #STRUCT_NAME# info = new #STRUCT_NAME#();
+                    #GET_INFO_MAPPING_BY_REFLECTION2#
+					if(is_Btest)
+					{
+						m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION2#, info);
+					}
+					else
+					{
+						m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION2#, info);
+					}
+                    #CLIENT_CODE_END#
+		    	}
+	    	}
+
+	}
+//}

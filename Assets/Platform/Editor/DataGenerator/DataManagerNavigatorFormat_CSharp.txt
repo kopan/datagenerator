@@ -1,0 +1,217 @@
+﻿#CLIENT_CODE_START#
+using UnityEngine;
+#CLIENT_CODE_END#
+using System;
+#SERVER_CODE_START#
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Hosting;
+#SERVER_CODE_END#
+using System.Xml;
+using System.Collections.Generic;
+
+//namespace DataGen
+//{
+
+public sealed class DataManagerNavigator
+{
+	static readonly DataManagerNavigator instance =  new DataManagerNavigator();	
+	#CLIENT_CODE_START#
+	private Dictionary<System.Type,System.Object> Navigator = new Dictionary<System.Type,System.Object>();
+
+	public string g_szRootPath  { get; set; }
+	public bool g_bIsLoadAssetBundle { get; set; }
+
+	public string g_LastModifiedUser { get; set; }
+    public string g_LastModifiedDate { get; set; }
+	public int g_DataCount { get; set; }
+
+    public List<string> IgnoreList;
+	#CLIENT_CODE_END#
+	#SERVER_CODE_START#
+	private static object lockObject = new object();
+	public static MemoryCache Cache = new MemoryCache(new MemoryCacheOptions());
+	public static string ContentRootPath;
+	#SERVER_CODE_END#
+
+	DataManagerNavigator()
+	{
+		#CLIENT_CODE_START#
+		UnityEngine.Object IsStoredResources = UnityEngine.Resources.Load("xmlData/info");
+        //if(IsStoredResources == null)
+        //{
+            //g_bIsLoadAssetBundle = true;
+
+            //g_szRootPath = Application.dataPath;
+            //if (Application.platform == RuntimePlatform.Android ||
+            //    Application.platform == RuntimePlatform.IPhonePlayer)
+            //{
+                g_szRootPath = Application.persistentDataPath;
+           // }
+        //}
+        //else
+        //{
+        //    g_bIsLoadAssetBundle = false;
+        //}  
+		#CLIENT_CODE_END# 		
+	}
+
+	public static DataManagerNavigator Instance
+	{
+		get
+		{
+			return instance;
+		}
+	}
+
+	#CLIENT_CODE_START#
+	public void LoadInfo()
+	{
+		XmlDocument xml = new XmlDocument();
+        string szInfoFile = "";
+
+        //if (g_bIsLoadAssetBundle)
+        //{
+        //    UnityEngine.TextAsset textAsset = (UnityEngine.TextAsset)UnityEngine.Resources.Load("xmlData/info", typeof(UnityEngine.TextAsset));
+        //    xml.LoadXml(textAsset.text);          
+        //}
+        //else
+        {
+            szInfoFile = (System.IO.File.Exists(g_szRootPath + "/StreamingAssets/xmlData/info.xml")) ?
+                            g_szRootPath + "/StreamingAssets/xmlData/info.xml" :
+                            g_szRootPath + "/xeData/info.xml";
+
+            if (System.IO.File.Exists(szInfoFile))
+                xml.Load(szInfoFile);
+        } 
+        
+        if(xml.HasChildNodes)
+        {
+            XmlNodeList infoNode = xml.SelectNodes("Data/Info");
+            g_LastModifiedUser = infoNode.Item(0).Attributes["LastModifiedUser"].Value;
+            g_LastModifiedDate = infoNode.Item(0).Attributes["LastModifiedDate"].Value;
+            g_DataCount = Convert.ToInt32(infoNode.Item(0).Attributes["DataCount"].Value);
+        }
+        else { g_LastModifiedDate = ""; g_DataCount = 0; }
+	}
+
+    public void AddIgnoreString(string name)
+    {
+        if (IgnoreList == null)
+            IgnoreList = new List<string>();
+
+        if (IgnoreList.Contains(name) == false)
+            IgnoreList.Add(name);
+    }
+
+    bool CheckAdd(string type_name)
+    {
+        if (IgnoreList == null)
+            return true;
+
+        return IgnoreList.Contains(type_name) == false;
+    }
+
+	public void Load() 
+	{
+#if UNITY_STANDALONE || UNITY_STANDALONE_WIN
+		return;
+#endif
+
+		if( 0 != Navigator.Count ) return;
+
+		#SETTING#
+	}
+
+	public T GetManager<T>()
+	{
+		if ( 0 == Navigator.Count ) 
+			Load();
+
+		if (false == Navigator.ContainsKey(typeof(T)))
+			return default(T);
+
+		return (T)Navigator[typeof(T)];
+	}
+
+	public void ReloadManager(string name)
+    {
+       #SETTING2#
+    }
+	#CLIENT_CODE_END#
+	#SERVER_CODE_START#
+	public void LoadInfo(out string CreatedDate, out int DataCount)
+    {
+        System.Object Obj = Cache.Get("Info");
+        if (Obj == null)
+        {
+            lock (lockObject)
+            {
+                XmlDocument xml = new XmlDocument();
+                var path = System.IO.Path.Combine(ContentRootPath, "DataGeneratorForServer/xmlDataForServer/info.xml");
+                xml.Load(path);
+                Cache.Set("Info", xml, new FileCacheDependency(path));
+
+                Obj = Cache.Get("Info");
+            }
+        }
+
+        XmlNodeList infoNode = ((XmlDocument)Obj).SelectNodes("Data/Info");
+        CreatedDate = infoNode.Item(0).Attributes["LastModifiedDate"].Value;
+        DataCount = Convert.ToInt32(infoNode.Item(0).Attributes["DataCount"].Value);
+    }    
+
+	public T GetManager<T>()
+	{
+		T Obj = Cache.Get<T>(typeof(T).Name);
+		if( Obj == null )
+		{
+			lock (lockObject)
+			{
+				#SETTING#
+		
+				Obj = Cache.Get<T>(typeof(T).Name);
+			}
+		}
+
+		return Obj;
+	}
+
+	public void Init(string env)
+    {
+		ContentRootPath = env;
+        #CACHEALL#
+    }
+
+	public class FileCacheDependency
+    {
+        public FileCacheDependency(string filename)
+        {
+            FileName = filename;
+        }
+
+        public string FileName { get; }
+    }
+
+
+	#SERVER_CODE_END#
+	
+}
+
+#SERVER_CODE_START#
+
+public static class MemoryCacheExtensions
+{
+    public static void Set<TItem>(this IMemoryCache cache, string key, TItem value, DataManagerNavigator.FileCacheDependency dependency)
+    {
+        var fileInfo = new System.IO.FileInfo(dependency.FileName);
+        var fileProvider = new PhysicalFileProvider(fileInfo.DirectoryName);
+        cache.Set(key, value, new MemoryCacheEntryOptions()
+                            .AddExpirationToken(fileProvider.Watch(fileInfo.Name)));
+
+    }
+}
+
+#SERVER_CODE_END#
+
+//}

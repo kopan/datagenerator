@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Info Device="self" Date="2022-05-25 11:58:17" Version="0.1">
+  <Files>
+    <Item Path="Text/TextCommon.csv" Size="43569" MD5="3e0ec70d9f18d1f38f86aadc509dc290" Date="20220525115817" />
+    <Item Path="assetbundles/assetbundles" Size="4409" MD5="ebe09b0a2d9a1795b8127816dba6fa6b" Date="20210923195021" />
+    <Item Path="assetbundles/assetbundles.manifest" Size="137" MD5="1361b01a800d198d3944a068eff3e901" Date="20210923195021" />
+    <Item Path="assetbundles/newbundle" Size="4894344" MD5="dd00655ad6c62fe5f82a39967b8bbdd5" Date="20210923195021" />
+    <Item Path="assetbundles/newbundle.manifest" Size="2023" MD5="6b80d3076ce56ce12f118e7ac9509a99" Date="20210923195021" />
+    <Item Path="config/config.xml" Size="634" MD5="36fd812ae7b8d5ecc2a78aa92fcc9bdc" Date="20210923195021" />
+    <Item Path="xeData/.DS_Store" Size="6148" MD5="194577a7e20bdcc7afbb718f502c134c" Date="20220509103732" />
+    <Item Path="xeData/AreaEvent.xml" Size="336" MD5="0f9619f272d318d826d403236946c1e6" Date="20220520181019" />
+    <Item Path="xeData/Area_001.xml" Size="272" MD5="3735025587f038d212d86ee8c4f382e1" Date="20220520181020" />
+    <Item Path="xeData/Area_001_Btest.xml" Size="272" MD5="af41b03c2b85b945aa4a938475573ac2" Date="20220520181038" />
+    <Item Path="xeData/Area_002.xml" Size="272" MD5="52b10b55da960c90ce2cec93dc46f2ab" Date="20220520181040" />
+    <Item Path="xeData/Area_003.xml" Size="352" MD5="332bafd4760c0256578e5e209c00a4a9" Date="20220520181038" />
+    <Item Path="xeData/Area_004.xml" Size="352" MD5="c8746eb462408b8c5b861749b7d5a60a" Date="20220520181037" />
+    <Item Path="xeData/Area_005.xml" Size="352" MD5="987f7a3c6d19185b6710f1ca95953892" Date="20220520181036" />
+    <Item Path="xeData/Area_006.xml" Size="352" MD5="819f223be71c9d042841fd4276ecdaed" Date="20220520181033" />
+    <Item Path="xeData/Area_007.xml" Size="352" MD5="72a80fb08242e3e67a151af23992920b" Date="20220520181012" />
+    <Item Path="xeData/Area_008.xml" Size="352" MD5="a75c3b5f55177116000340e47d15bf8d" Date="20220520181025" />
+    <Item Path="xeData/Area_009.xml" Size="352" MD5="49c17af89a6b9bf74d8563bfe13787b0" Date="20220520181016" />
+    <Item Path="xeData/CdnADEvent.xml" Size="368" MD5="6f0508ed721dab4307acfd3c75b9f306" Date="20220520181028" />
+    <Item Path="xeData/CdnADUnitID.xml" Size="544" MD5="c149c5b8051026af9f1545c8d43b1124" Date="20220520181019" />
+    <Item Path="xeData/CdnAddDownload.xml" Size="720" MD5="fae56e79cc035e353fc6b49fa3cbcfbb" Date="20220520181043" />
+    <Item Path="xeData/CdnAlwaysGuide.xml" Size="816" MD5="0a537837eaad2e961f6baac137deee50" Date="20220517120637" />
+    <Item Path="xeData/CdnBonusStage.xml" Size="304" MD5="e698b75f7f2cfc9de8132ea92e627246" Date="20220520181030" />
+    <Item Path="xeData/CdnBoxShopItem.xml" Size="336" MD5="db3a0a26be811ef641b766b222743969" Date="20220520181046" />
+    <Item Path="xeData/CdnContinue.xml" Size="896" MD5="a333eba0ce81eec9c6b8ff898701d148" Date="20220520181045" />
+    <Item Path="xeData/CdnEventReward.xml" Size="2304" MD5="4e350222360ce69559771a38f9c800ca" Date="20220520181044" />
+    <Item Path="xeData/CdnIAP.xml" Size="12976" MD5="30e33dd44dd950c48eee8d434cfc1fa5" Date="20220520181034" />
+    <Item Path="xeData/CdnIngameHelper.xml" Size="8928" MD5="3a2bd678d22c0e69a6a39b86f29b33c1" Date="20220520181014" />
+    <Item Path="xeData/CdnLeaderBoardCountry.xml" Size="1248" MD5="44e8ab1328682e843656a8575311121f" Date="20220520181048" />
+    <Item Path="xeData/CdnLeaderBoardTemp.xml" Size="2320" MD5="e4d6f7c3c60fa634b188d980422bddef" Date="20220520181022" />
+    <Item Path="xeData/CdnLocalPush.xml" Size="2080" MD5="44c45af0bfdd058bcc3ba30e13aaf2b8" Date="20220520181018" />
+    <Item Path="xeData/CdnLoginEvent.xml" Size="448" MD5="ce7f951a3c76dc2cbbe2cc3dbbc582c4" Date="20220511135112" />
+    <Item Path="xeData/CdnMetaAreaInfo.xml" Size="1136" MD5="df4cd356291697f50e34be5733fe2329" Date="20220520181016" />
+    <Item Path="xeData/CdnMonster.xml" Size="2224" MD5="3504431f349e67c48933493ea80e2316" Date="20220520181015" />
+    <Item Path="xeData/CdnProfile.xml" Size="2064" MD5="907d045f59f04eb390ae681def647894" Date="20220520181011" />
+    <Item Path="xeData/CdnQuestCount.xml" Size="640" MD5="b4fa2ad15e10b883c94c1b9d8112c795" Date="20220520181020" />
+    <Item Path="xeData/CdnRewardGroup.xml" Size="18144" MD5="8f5bed0e6f108ea9e003f6280328dad8" Date="20220520181040" />
+    <Item Path="xeData/CdnRewardGroup_Btest.xml" Size="17712" MD5="ed89fd49f2cd457ad8f0daedefb3cdd4" Date="20220520181042" />
+    <Item Path="xeData/CdnRotationEvent.xml" Size="1616" MD5="cd7525de988f4e4bf4e4a78467ac6c0a" Date="20220523120029" />
+    <Item Path="xeData/CdnRoulette.xml" Size="784" MD5="14b610868a27000af309a12bebc41f2c" Date="20220520181015" />
+    <Item Path="xeData/CdnRouletteMileage.xml" Size="240" MD5="19ac68ecc11713d47744c3dd3cd43603" Date="20220520181017" />
+    <Item Path="xeData/CdnShopPackage.xml" Size="448" MD5="711c32276f1c9267849a287997d9885a" Date="20220520181046" />
+    <Item Path="xeData/CdnShopPopup.xml" Size="7968" MD5="f17ea80f517d014311c8d446aed0aac0" Date="20220520181047" />
+    <Item Path="xeData/CdnSpinDelay.xml" Size="240" MD5="0d5c752ffcf2415850402c18f6e48a08" Date="20220520181045" />
+    <Item Path="xeData/CdnWinStreak.xml" Size="224" MD5="ae1bf957f35da9ebabace3ee725efba2" Date="20220517120637" />
+    <Item Path="xeData/CollectionEventCount.xml" Size="5584" MD5="ae2cf63e4b08f3f07b73ba66438926cc" Date="20220520181012" />
+    <Item Path="xeData/CollectionEventRotation.xml" Size="320" MD5="f351e2c54c5f0b6341ebd82ff1d1e2d7" Date="20220520181010" />
+    <Item Path="xeData/GameConfig.xml" Size="5776" MD5="be4c8455ad1d6dbf82160458bcac8ef1" Date="20220520181029" />
+    <Item Path="xeData/GameConfig_Btest.xml" Size="5648" MD5="edbba4ae5bd8c2282b42d536f9c0bb26" Date="20220523133629" />
+    <Item Path="xeData/LanguageType.xml" Size="2672" MD5="b55528df89051d61d2164b3426601f92" Date="20220520181014" />
+    <Item Path="xeData/MetaConfig.xml" Size="2656" MD5="c29aa79b783f038a137e0b6b0a43c6b3" Date="20220524100124" />
+    <Item Path="xeData/MetaNewGimmick.xml" Size="1888" MD5="6817dc2d67fe2013d934b31611e39059" Date="20220520181041" />
+    <Item Path="xeData/MetaRunTable.xml" Size="496" MD5="13a574aeeb701de0f4d6bcce1bc9bd3c" Date="20220520181037" />
+    <Item Path="xeData/info.xml" Size="152" MD5="953753fc2f0972c0613cd001addb726b" Date="20220525115817" />
+  </Files>
+</Info>

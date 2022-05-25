@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Info>
+  <Files>
+    <Item Path="C:/Work/PatchSystem/resources/assetbundles/assetbundles" MD5="ebe09b0a2d9a1795b8127816dba6fa6b" />
+    <Item Path="C:/Work/PatchSystem/resources/assetbundles/assetbundles.manifest" MD5="1361b01a800d198d3944a068eff3e901" />
+    <Item Path="C:/Work/PatchSystem/resources/assetbundles/newbundle" MD5="dd00655ad6c62fe5f82a39967b8bbdd5" />
+    <Item Path="C:/Work/PatchSystem/resources/assetbundles/newbundle.manifest" MD5="6b80d3076ce56ce12f118e7ac9509a99" />
+    <Item Path="C:/Work/PatchSystem/resources/config/config.xml" MD5="fa1867864723cd1831b25a1f8a9115b9" />
+    <Item Path="C:/Work/PatchSystem/resources/xeData/info.xml" MD5="2a74b851d1bf69193d36b4b4e98f7854" />
+    <Item Path="C:/Work/PatchSystem/resources/xeData/Tree.xml" MD5="b17e5f19fd7b0c3723ee9583df14318a" />
+  </Files>
+</Info>
