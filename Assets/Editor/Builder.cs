@@ -66,13 +66,11 @@ public class Builder
         string[] args = Environment.GetCommandLineArgs();
         string type = "";
         string folder = "PokoTown";
-        string resourceVersionName = "0.0.0";
         bool isForceGenAll = false;
         for (int i = 1; i < args.Length; i++)
         {
             //if (args[i - 1].Equals("-clear")) type = args[i];
             if (args[i - 1].Equals("-folder")) folder = args[i];
-            if (args[i - 1].Equals("-rvn")) resourceVersionName = args[i];
             if (args[i - 1].Equals("-forcegenall"))
             {
                 string strForceGenAll = args[i];

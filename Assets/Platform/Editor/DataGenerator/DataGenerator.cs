@@ -148,7 +148,7 @@ public class DataGenerator
 
             byte[] Key = new byte[32];
             byte[] IV = new byte[16];
-            byte[] FileKey = Encoding.UTF8.GetBytes(Path.GetFileNameWithoutExtension(szXmlFileName).ToCharArray());
+            byte[] FileKey = Encoding.UTF8.GetBytes(Path.GetFileNameWithoutExtension(szXmlFileName));
             Array.Clear(Key, 0, 32);
             Array.Copy(FileKey, Key, (FileKey.Length > 32) ? 32 : FileKey.Length);
             Array.Copy(Key, IV, 16);
@@ -341,7 +341,7 @@ public class DataGenerator
                         }
                         else if (szAttribute.ToLower() == "float")
                         {
-                            szLoadText += " Convert.ToSingle(row[" + rowIndex.ToString() + "].ToString())";
+                            szLoadText += " Convert.ToSingle(row[" + rowIndex.ToString() + "].ToString(), System.Globalization.CultureInfo.InvariantCulture)";
                         }
                         else if (szAttribute.ToLower() == "array_byte")
                         {
@@ -404,14 +404,28 @@ public class DataGenerator
                             (IsClientSource && szAttributeType == "2") ||
                             (!IsClientSource && szAttributeType == "1")) continue;
 
-                        szLoadText = "if(info.GetType().GetField(\"";
-                        szLoadText += Dt.Rows[i].ItemArray[0].ToString();
-                        szLoadText += "\") != null) { if (row[" + rowIndex.ToString();
-                        szLoadText += "].ToString().Length > 0) info.GetType().GetField(\"";
-                        szLoadText += Dt.Rows[i].ItemArray[0].ToString();
-                        szLoadText += "\").SetValue(info,";
-
                         szAttribute = Dt.Rows[i].ItemArray[2].ToString();
+                        if (szAttribute.ToLower().Contains("enum"))
+                        {
+                            string[] text = szAttribute.Split(' ');
+
+                            szLoadText = "if(info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\") != null && null != row.ItemArray && " + rowIndex.ToString() + " < row.ItemArray.Length) { if (row[" + rowIndex.ToString();
+                            szLoadText += "].ToString().Length > 0 && Enum.IsDefined(typeof(" + text[1] + "), row[" + rowIndex.ToString() + "].ToString())) info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\").SetValue(info,";
+                        }
+                        else
+                        {
+                            szLoadText = "if(info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\") != null && null != row.ItemArray && " + rowIndex.ToString() + " < row.ItemArray.Length) { if (row[" + rowIndex.ToString();
+                            szLoadText += "].ToString().Length > 0) info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\").SetValue(info,";
+                        }
+
                         if (szAttribute.ToLower() == "byte")
                         {
                             szLoadText += "Convert.ToByte(row[" + rowIndex.ToString() + "].ToString())";
@@ -430,7 +444,7 @@ public class DataGenerator
                         }
                         else if (szAttribute.ToLower() == "float")
                         {
-                            szLoadText += "Convert.ToSingle(row[" + rowIndex.ToString() + "].ToString())";
+                            szLoadText += "Convert.ToSingle(row[" + rowIndex.ToString() + "].ToString(), System.Globalization.CultureInfo.InvariantCulture)";
                         }
                         else if (szAttribute.ToLower() == "array_byte")
                         {
@@ -484,7 +498,7 @@ public class DataGenerator
                         }
 
                         szLoadText += ");} else UnityEngine.Debug.LogError(\"Exception : ";
-                        szLoadText += szStructName + Dt.Rows[i].ItemArray[0].ToString() + "\");";
+                        szLoadText += szStructName + Dt.Rows[i].ItemArray[0].ToString() + ", (" + rowIndex.ToString() + ")<+\"" + ");";
 
                         aLines.Add(szLine.Replace("#GET_INFO_MAPPING_BY_REFLECTION#", szLoadText));
                         rowIndex++;
@@ -500,15 +514,26 @@ public class DataGenerator
                             (IsClientSource && szAttributeType == "2") ||
                             (!IsClientSource && szAttributeType == "1")) continue;
 
-                        szLoadText = "if(info.GetType().GetField(\"";
-                        szLoadText += Dt.Rows[i].ItemArray[0].ToString();
-                        szLoadText += "\") != null) { info.GetType().GetField(\"";
-                        szLoadText += Dt.Rows[i].ItemArray[0].ToString();
-                        szLoadText += "\").SetValue(info,";
-
-                        
-
                         szAttribute = Dt.Rows[i].ItemArray[2].ToString();
+                        if (szAttribute.ToLower().Contains("enum"))
+                        {
+                            string[] text = szAttribute.Split(' ');
+
+                            szLoadText = "if(info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\") != null && " + rowIndex.ToString() + " < node.Attributes.Count && Enum.IsDefined(typeof(" + text[1] + "), node.Attributes[" + rowIndex.ToString() + "].Value)) { info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\").SetValue(info,";
+                        }
+                        else
+                        {
+                            szLoadText = "if(info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\") != null && " + rowIndex.ToString() + " < node.Attributes.Count) { info.GetType().GetField(\"";
+                            szLoadText += Dt.Rows[i].ItemArray[0].ToString();
+                            szLoadText += "\").SetValue(info,";
+                        }
+
                         if (szAttribute.ToLower() == "byte")
                         {
                             szLoadText += "Convert.ToByte(node.Attributes[" + rowIndex.ToString() + "].Value)";
@@ -527,7 +552,7 @@ public class DataGenerator
                         }
                         else if (szAttribute.ToLower() == "float")
                         {
-                            szLoadText += "Convert.ToSingle(node.Attributes[" + rowIndex.ToString() + "].Value)";
+                            szLoadText += "Convert.ToSingle(node.Attributes[" + rowIndex.ToString() + "].Value, System.Globalization.CultureInfo.InvariantCulture)";
                         }
                         else if (szAttribute.ToLower() == "array_byte")
                         {
@@ -579,14 +604,9 @@ public class DataGenerator
                             szLoadText += string.Format(" = Newtonsoft.Json.JsonConvert.DeserializeObject<{0}>(node.Attributes[{1}].Value", t, rowIndex.ToString());
 
                         }
-                        /*
-                        if (info.GetType().GetField("idx") != null) {
-                            Debug.Log($"cdn data {xn.Attributes[1].Value}");
-                            info.GetType().GetField("idx").SetValue(info, xmlhelper.GetInt(xn, "idx", 0));
-                        }
-                        */
+
                         szLoadText += ");} else UnityEngine.Debug.LogError(\"Exception : ";
-                        szLoadText += szStructName + Dt.Rows[i].ItemArray[0].ToString() + "\");";
+                        szLoadText += szStructName + Dt.Rows[i].ItemArray[0].ToString() + ", (" + rowIndex.ToString() + ")<+\"" + ");";
 
                         aLines.Add(szLine.Replace("#GET_INFO_MAPPING_BY_REFLECTION2#", szLoadText));
                         rowIndex++;
@@ -650,7 +670,7 @@ public class DataGenerator
 
                     aLines.Add(szLine.Replace("#KEY_TYPE_CONVERT_BY_REFLECTION#", type_text));
                 }
-		else if (szLine.Contains("#KEY_TYPE_CONVERT_BY_REFLECTION2#"))
+		        else if (szLine.Contains("#KEY_TYPE_CONVERT_BY_REFLECTION2#"))
                 {
                     var type = Dt.Rows[0].ItemArray[2].ToString();
                     string type_text = "";
@@ -669,6 +689,35 @@ public class DataGenerator
                     }
 
                     aLines.Add(szLine.Replace("#KEY_TYPE_CONVERT_BY_REFLECTION2#", type_text));
+                }
+
+                else if (szLine.Contains("#KEY_TYPE_CONVERT_IS_DEFINED_ROW#"))
+                {
+                    var type = Dt.Rows[0].ItemArray[2].ToString();
+                    string type_text = "";
+                    if (type.Contains("enum"))
+                    {
+                        var text = type.Split(' ');
+                        type_text = "if (null != row && false == row.IsNull(0)) { if (false == Enum.IsDefined(typeof(";
+                        type_text += text[1] + "), row[0].ToString())) { Debug.Log($\"{row[0].ToString()} is missed!\"); continue; } }";
+                        //type_text = "Enum.IsDefined(typeof(" + text[1] + "), row[0].Tostring())";
+                    }
+
+                    aLines.Add(szLine.Replace("#KEY_TYPE_CONVERT_IS_DEFINED_ROW#", type_text));
+                }
+                else if (szLine.Contains("#KEY_TYPE_CONVERT_IS_DEFINED_ROW2#"))
+                {
+                    var type = Dt.Rows[0].ItemArray[2].ToString();
+                    string type_text = "";
+                    if (type.Contains("enum"))
+                    {
+                        var text = type.Split(' ');
+                        type_text = "if (null != node && null != node.Attributes && 0 < node.Attributes.Count && null != node.Attributes[0] && null != node.Attributes[0].Value)";
+                        type_text += "{ if (false == Enum.IsDefined(typeof(";
+                        type_text += text[1] + "), node.Attributes[0].Value)) { Debug.Log($\"{node.Attributes[0].Value} is missed!\"); continue; } }";
+                    }
+
+                    aLines.Add(szLine.Replace("#KEY_TYPE_CONVERT_IS_DEFINED_ROW2#", type_text));
                 }
 
                 else if (szLine.Contains("#STRUCT_NAME#"))
@@ -967,7 +1016,7 @@ public class DataGenerator
         if (file != null)
         {
             Debug.Log("Copy Success : " + folderName + "/" + ori_file.Name);
-            copy_count++;
+            Interlocked.Increment(ref copy_count);
         }
         else
         {
@@ -1111,6 +1160,7 @@ public class DataGenerator
 
         copy_count = 0;
 
+        List<Task> tasks = new List<Task>();
         Dictionary<string, string> copySubFolderDic = new Dictionary<string, string>();
         foreach (var iter in fileList.Files)
         {
@@ -1127,7 +1177,8 @@ public class DataGenerator
                 {
                     if (parent == FolderId)
                     {
-                        CopyFile(drive_service, iter.Id, copyTopFolderId);
+                        var task = Task.Factory.StartNew(() => CopyFile(drive_service, iter.Id, copyTopFolderId));
+                        tasks.Add(task);
                         break;
                     }
                     else
@@ -1144,15 +1195,24 @@ public class DataGenerator
                             parentId = CreateFolder(drive_service, name, copyTopFolderId);
                             copySubFolderDic.Add(name, parentId);
                         }
-                        CopyFile(drive_service, iter.Id, parentId, name);
+                        var task = Task.Factory.StartNew(() => CopyFile(drive_service, iter.Id, parentId, name));
+                        tasks.Add(task);
                     }
                 }
             }
             else
             {
-                CopyFile(drive_service, iter.Id, copyTopFolderId);
+                var task = Task.Factory.StartNew(() => CopyFile(drive_service, iter.Id, copyTopFolderId));
+                tasks.Add(task);
+            }
+
+            if(tasks.Count % 6 == 0)
+            {
+                Task.WhenAll(tasks).Wait();
             }
         }
+
+        Task.WhenAll(tasks).Wait();
 
         if (string.IsNullOrEmpty(delete_folder_id) == false)
         {
@@ -1962,10 +2022,17 @@ public class DataGenerator
             Debug.Log(text);
         }
 
+        int errorCount = ErrorLog_Queue.Count;
+
         while (ErrorLog_Queue.Count > 0)
         {
             ErrorLog_Queue.TryDequeue(out var text);
             Debug.LogError(text);
+        }
+
+        if (errorCount > 0)
+        {
+            throw new Exception("Error has occurred Count : " + errorCount);
         }
 
         //AssetDatabase.Refresh();

@@ -144,17 +144,24 @@ using System.Collections;
 			string filename = "#XML_ENC_PATH#";
 			m_xmlPath = DataManagerNavigator.Instance.g_szRootPath + filename;
 
+			
+
 			if (System.IO.File.Exists(m_xmlPath) == false)
             {
                 m_xmlPath =  Global.StreamingAssetsPathForFile + filename;
             }
+
+			
+
             if (System.IO.File.Exists (m_xmlPath))
 			{
+				
+
 				System.IO.FileStream fsReadXml = new System.IO.FileStream(m_xmlPath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
 
 				byte[] Key = new byte[32];
 				byte[] IV = new byte[16];
-				byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(m_xmlPath).ToCharArray());
+				byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(m_xmlPath));
 				Array.Clear(Key, 0, 32);
 				Array.Copy(FileKey, Key, (FileKey.Length > 32) ? 32 : FileKey.Length);
 				Array.Copy(Key, IV, 16);
@@ -172,6 +179,8 @@ using System.Collections;
 			else
 			{
 #if !UNITY_EDITOR
+				
+
 				ManagerData._instance.StartCoroutine(Load(m_xmlPath));
 #endif
 			}
@@ -182,26 +191,36 @@ using System.Collections;
 			if(filename.Contains("_Btest"))
 			{
 				//[2022.03.25][rex] If it is already _Btest, just load itself.
+				
 			}
 			else
 			{
+				
+
 				string filename_Btest = "#XML_ENC_PATH#";
 				filename_Btest = filename_Btest.Replace(".", "_Btest.");
 				m_xmlPath_Btest = DataManagerNavigator.Instance.g_szRootPath + filename_Btest;
+
+				
 
 				if (System.IO.File.Exists(m_xmlPath_Btest) == false)
 				{
 					m_xmlPath_Btest =  Global.StreamingAssetsPathForFile + filename_Btest;
 				}
+
+				
+
 				if (System.IO.File.Exists (m_xmlPath_Btest))
 				{
+					
+
 					ds_Btest = new DataSet();
 
 					System.IO.FileStream fsReadXml = new System.IO.FileStream(m_xmlPath_Btest, System.IO.FileMode.Open, System.IO.FileAccess.Read);
 
 					byte[] Key = new byte[32];
 					byte[] IV = new byte[16];
-					byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(m_xmlPath_Btest).ToCharArray());
+					byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(m_xmlPath_Btest));
 					Array.Clear(Key, 0, 32);
 					Array.Copy(FileKey, Key, (FileKey.Length > 32) ? 32 : FileKey.Length);
 					Array.Copy(Key, IV, 16);
@@ -219,6 +238,8 @@ using System.Collections;
 				else
 				{
 #if !UNITY_EDITOR
+					
+
 					ManagerData._instance.StartCoroutine(Load(m_xmlPath_Btest, true));
 #endif
 				}
@@ -231,7 +252,8 @@ using System.Collections;
 			ds.EnforceConstraints = true;
 			#SERVER_CODE_END#
 
-			if(0 == ds.Tables.Count) return;
+			//[2022.10.13][rex] if only Btest changed, flow is blocked here. so remove this code.
+			//if(0 == ds.Tables.Count) return;
 
 			#SERVER_CODE_START#
 			m_xmlPath_Btest = System.IO.Path.Combine(DataManagerNavigator.ContentRootPath, "#XML_PATH#");
@@ -252,11 +274,26 @@ using System.Collections;
 			#CLIENT_CODE_START#
 			if(null == ds_Btest)
 			{
-				Load(ds.Tables[0]);
+				//Load(ds.Tables[0]);
+				if(0 == ds.Tables.Count)
+				{
+				}
+				else
+				{
+					Load(ds.Tables[0]);
+				}
 			}
 			else
 			{
-				Load(ds.Tables[0], ds_Btest.Tables[0]);
+				//Load(ds.Tables[0], ds_Btest.Tables[0]);
+				if(0 == ds.Tables.Count)
+				{
+					Load(null, ds_Btest.Tables[0]);
+				}
+				else
+				{
+					Load(ds.Tables[0], ds_Btest.Tables[0]);
+				}
 			}
 			#CLIENT_CODE_END#
 
@@ -286,12 +323,14 @@ using System.Collections;
 			
 			if (!string.IsNullOrEmpty(www.error))
 			{
-				//Debug.LogWarning("Load : " + filePath + www.error);
-				Debug.LogError("Load : " + filePath + www.error);
+				
+				
 				www.Dispose();
 			}
 			else
 			{
+				
+
 				byte[] Key = new byte[32];
 				byte[] IV = new byte[16];
 				byte[] FileKey = System.Text.Encoding.UTF8.GetBytes(System.IO.Path.GetFileNameWithoutExtension(filePath).ToCharArray());
@@ -357,38 +396,58 @@ using System.Collections;
 	
 		public void Load(DataTable dt, DataTable dt_Btest = null)
 		{
-			m_Table.Clear();
-			foreach (DataRow row in dt.Rows)
+			if(null != dt)
 			{
-				#CLIENT_CODE_START#
-				#STRUCT_NAME# info = new #STRUCT_NAME#();
-			
-				#GET_INFO_MAPPING_BY_REFLECTION# 
-
-				m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
-				#CLIENT_CODE_END#
-				#SERVER_CODE_START#
-				#STRUCT_NAME# info = new #STRUCT_NAME#
+				m_Table.Clear();
+				foreach (DataRow row in dt.Rows)
 				{
-					#GET_INFO_MAPPING# 
-				};
+					#CLIENT_CODE_START#
+					#KEY_TYPE_CONVERT_IS_DEFINED_ROW#
 
-				m_Table.Add(#KEY_TYPE_CONVERT#, info);
-				#SERVER_CODE_END#
+					#STRUCT_NAME# info = new #STRUCT_NAME#();
+					#GET_INFO_MAPPING_BY_REFLECTION#
+
+					//m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+					if (m_Table.ContainsKey(#KEY_TYPE_CONVERT_BY_REFLECTION#))
+					{
+						m_Table[#KEY_TYPE_CONVERT_BY_REFLECTION#] = info;
+					}
+					else
+					{
+						m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+					}
+					#CLIENT_CODE_END#
+					#SERVER_CODE_START#
+					#STRUCT_NAME# info = new #STRUCT_NAME#
+					{
+						#GET_INFO_MAPPING# 
+					};
+
+					m_Table.Add(#KEY_TYPE_CONVERT#, info);
+					#SERVER_CODE_END#
+				}
 			}
 
-			
-			if(dt_Btest != null)
+			if(null != dt_Btest)
 			{
 				m_Table_Btest.Clear();
 				foreach (DataRow row in dt_Btest.Rows)
 				{
 					#CLIENT_CODE_START#
+					#KEY_TYPE_CONVERT_IS_DEFINED_ROW#
+
 					#STRUCT_NAME# info = new #STRUCT_NAME#();
-			
 					#GET_INFO_MAPPING_BY_REFLECTION# 
 
-					m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+					//m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+					if (m_Table_Btest.ContainsKey(#KEY_TYPE_CONVERT_BY_REFLECTION#))
+					{
+						m_Table_Btest[#KEY_TYPE_CONVERT_BY_REFLECTION#] = info;
+					}
+					else
+					{
+						m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION#, info);
+					}
 					#CLIENT_CODE_END#
 					#SERVER_CODE_START#
 					#STRUCT_NAME# info = new #STRUCT_NAME#
@@ -402,27 +461,44 @@ using System.Collections;
 			}
 		}
 
-        	public void Load(XmlDocument xml, bool is_Btest = false)
-	    	{
-		    	XmlNode rootNode = xml.ChildNodes[1];
-		    	for (int i = 0; i < rootNode.ChildNodes.Count; ++i)
-		    	{
-			    	XmlNode node = rootNode.ChildNodes[i];
+        public void Load(XmlDocument xml, bool is_Btest = false)
+	    {
+		    XmlNode rootNode = xml.ChildNodes[1];
+		    for (int i = 0; i < rootNode.ChildNodes.Count; ++i)
+		    {
+			    XmlNode node = rootNode.ChildNodes[i];
 			
-			    	#CLIENT_CODE_START#
-				    #STRUCT_NAME# info = new #STRUCT_NAME#();
-                    #GET_INFO_MAPPING_BY_REFLECTION2#
-					if(is_Btest)
+			    #CLIENT_CODE_START#
+				#KEY_TYPE_CONVERT_IS_DEFINED_ROW2#
+
+				#STRUCT_NAME# info = new #STRUCT_NAME#();
+                #GET_INFO_MAPPING_BY_REFLECTION2#
+				if(is_Btest)
+				{
+					//m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION2#, info);
+					if (m_Table_Btest.ContainsKey(#KEY_TYPE_CONVERT_BY_REFLECTION2#))
+					{
+						m_Table_Btest[#KEY_TYPE_CONVERT_BY_REFLECTION2#] = info;
+					}
+					else
 					{
 						m_Table_Btest.Add(#KEY_TYPE_CONVERT_BY_REFLECTION2#, info);
+					}
+				}
+				else
+				{
+					//m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION2#, info);
+					if (m_Table.ContainsKey(#KEY_TYPE_CONVERT_BY_REFLECTION2#))
+					{
+						m_Table[#KEY_TYPE_CONVERT_BY_REFLECTION2#] = info;
 					}
 					else
 					{
 						m_Table.Add(#KEY_TYPE_CONVERT_BY_REFLECTION2#, info);
 					}
-                    #CLIENT_CODE_END#
-		    	}
-	    	}
-
+				}
+                #CLIENT_CODE_END#
+		    }
+	    }
 	}
 //}
